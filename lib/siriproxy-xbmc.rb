@@ -128,7 +128,7 @@ class SiriProxy::Plugin::XBMC < SiriProxy::Plugin
   
   listen for /recent.*albums/i do
     if (@xbmc.connect(@active_room))
-      say 'Recently Added Albums. This will be fleshed out."
+      say "Recently Added Albums. This will be fleshed out."
     end
     request_completed        
   end  
