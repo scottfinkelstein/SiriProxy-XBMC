@@ -126,7 +126,7 @@ class SiriProxy::Plugin::XBMC < SiriProxy::Plugin
     request_completed #always complete your request! Otherwise the phone will "spin" at the user!
   end
   
-  listen for /recent.*albums/i do
+  listen_for /recent.*albums/i do
     if (@xbmc.connect(@active_room))
       say "Recently Added Albums. This will be fleshed out."
     end
