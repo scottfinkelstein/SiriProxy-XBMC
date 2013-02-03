@@ -129,11 +129,21 @@ class SiriProxy::Plugin::XBMC < SiriProxy::Plugin
   listen_for /recent.*albums/i do
     if (@xbmc.connect(@active_room))
       data=@xbmc.get_recently_added_albums()
-      list=""
+      list=''
       data['albums'].each { |album| list=list+album['label']+"\n"}
-      say list, spoken: "Recently Added Albums. This will be fleshed out."
+      say list, spoken: "Here are your recently added albums"
     end
     request_completed        
+  end  
+ 
+  listen_for /recent.*songs/i do
+    if (@xbmc.connect(@active_room))
+      data=@xbmc.get_recently_added_songs()
+      list=''
+      data['songs'].each { |song| list=list+song['label']+"\n"}
+      say list, spoken: "Here are your recently added songs"
+    end
+    request_completed
   end  
 
   # recently added episodes
