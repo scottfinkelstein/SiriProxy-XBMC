@@ -224,7 +224,7 @@ raise XBMCLibrary::UnauthorizedError, "Could not authorize with XBMC. Did you se
   end 
 
   # Song info
-  def get_recently_added_artists()
+  def get_recently_added_songs()
     return xbmc('AudioLibrary.GetRecentlyAddedSongs')
   end
 
